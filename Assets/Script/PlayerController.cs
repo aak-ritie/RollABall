@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private int count;
     public Text countText;
     public Text winText;
+    [SerializeField]
+    private float scale;
     void Start()
     {
         count = 0;
@@ -26,18 +28,21 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Pick Up"))
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            
+            //transform.localScale += Vector3.one * scale;
+            other.transform.position = new Vector3(Random.Range(-1, 1), 0.5f, Random.Range(-1, 1));
             count += 1;
+            Debug.Log("Scale is: " + transform.localScale);
             SetCountText();
         }
     }
     public void SetCountText()
     {
         countText.text = count.ToString();
-        if(count >= 9)
-        {
-            winText.text = "You Win!";
-        }
+       
+        
+        
     }
     
 }
