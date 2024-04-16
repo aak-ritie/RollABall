@@ -31,9 +31,9 @@ public class PlayerController : MonoBehaviour
             //other.gameObject.SetActive(false);
             
             //transform.localScale += Vector3.one * scale;
-            other.transform.position = new Vector3(Random.Range(-1, 1), 0.5f, Random.Range(-1, 1));
+            other.transform.position = new Vector3(Random.Range(-2, 2), 0.5f, Random.Range(-2, 2));
             count += 1;
-            Debug.Log("Scale is: " + transform.localScale);
+           
             SetCountText();
         }
     }
